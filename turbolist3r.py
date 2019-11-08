@@ -758,7 +758,7 @@ class Virustotal(enumratorBaseThreaded):
     # once the send_req is rewritten we don't need to call this function, the stock one should be ok
     def enumerate(self):
         while self.url != '':
-            resp = self.send_req(url)
+            resp = self.send_req(self.url)
             resp = json.loads(resp)
             if 'error' in resp:
                 self.print_(R + "[!] Error: Virustotal probably now is blocking our requests" + W)
